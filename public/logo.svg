@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 850" width="100%" height="100%">
+  <defs>
+    <!-- Degradado principal del líquido morado a rosa magenta -->
+    <linearGradient id="liquidGrad" x1="0%" y1="15%" x2="100%" y2="65%">
+      <stop offset="0%" stop-color="#461868" />
+      <stop offset="35%" stop-color="#6F1A7C" />
+      <stop offset="70%" stop-color="#B11D7F" />
+      <stop offset="100%" stop-color="#E12586" />
+    </linearGradient>
+
+    <!-- Onda superior oscura/vino -->
+    <linearGradient id="waveTopDark" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2B0C40" />
+      <stop offset="60%" stop-color="#420B4C" />
+      <stop offset="100%" stop-color="#5E0F57" />
+    </linearGradient>
+
+    <!-- Reflejo curvo magenta/rosa brillante en la cresta derecha -->
+    <linearGradient id="waveHighlight" x1="0%" y1="0%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#B51A7D" stop-opacity="0" />
+      <stop offset="60%" stop-color="#E83095" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#FF52B2" stop-opacity="1" />
+    </linearGradient>
+
+    <!-- Gajo individual de limón redondeado -->
+    <path id="lemonSegment" d="M 0,-16 L 16,-56 A 59,59 0 0,0 -16,-56 Z" fill="#99237D" />
+  </defs>
+
+  <!-- GRUPO COPA / SÍMBOLO (Escalado y centrado con margen de seguridad) -->
+  <g id="cocktail" transform="translate(50, 15)">
+    <!-- Borde exterior blanco con remate curvo en la base -->
+    <path d="M 172 65
+             C 264 48, 370 115, 532 117
+             C 627 118, 699 81, 755 48
+             L 470 514
+             C 459 532, 441 532, 430 514
+             Z" fill="none" stroke="#FFFFFF" stroke-width="29" stroke-linejoin="round" stroke-linecap="round" />
+
+    <!-- Masa de líquido principal -->
+    <path d="M 183 73
+             C 270 57, 372 122, 532 124
+             C 621 125, 689 90, 740 61
+             L 450 505
+             Z" fill="url(#liquidGrad)" />
+
+    <!-- Sombra/profundidad ondulada en la parte superior -->
+    <path d="M 183 73
+             C 281 60, 370 104, 493 109
+             C 616 113, 694 70, 740 61
+             C 694 115, 571 159, 450 154
+             C 338 148, 248 104, 183 73
+             Z" fill="url(#waveTopDark)" opacity="0.9" />
+
+    <!-- Resplandor luminoso en la curva derecha -->
+    <path d="M 450 121
+             C 551 122, 652 95, 740 61
+             C 715 104, 659 157, 558 160
+             C 508 161, 461 143, 450 121
+             Z" fill="url(#waveHighlight)" />
+
+    <!-- ELEMENTO CENTRAL: LUPA / RODAJA DE LIMÓN -->
+    <g id="magnifier">
+      <!-- Mango blanco de la lupa -->
+      <polygon points="389,330 433,371 381,427 337,386" fill="#FFFFFF" />
+
+      <!-- Aro exterior blanco de la lupa -->
+      <circle cx="475" cy="249" r="80" fill="none" stroke="#FFFFFF" stroke-width="19" />
+
+      <!-- Pulpa / fondo interior -->
+      <circle cx="475" cy="249" r="70" fill="#FFFFFF" />
+
+      <!-- Núcleo central blanco -->
+      <circle cx="475" cy="249" r="10" fill="#FFFFFF" />
+
+      <!-- 8 Gajos de limón con semillas -->
+      <g transform="translate(475, 249)">
+        <use href="#lemonSegment" transform="rotate(0)" />
+        <use href="#lemonSegment" transform="rotate(45)" />
+        <use href="#lemonSegment" transform="rotate(90)" />
+        <use href="#lemonSegment" transform="rotate(135)" />
+        <use href="#lemonSegment" transform="rotate(180)" />
+        <use href="#lemonSegment" transform="rotate(225)" />
+        <use href="#lemonSegment" transform="rotate(270)" />
+        <use href="#lemonSegment" transform="rotate(315)" />
+
+        <!-- Pepitas / semillas -->
+        <circle cx="0" cy="-31" r="2.5" fill="#FFFFFF" />
+        <circle cx="22" cy="-22" r="2.5" fill="#FFFFFF" />
+        <circle cx="31" cy="0" r="2.5" fill="#FFFFFF" />
+        <circle cx="22" cy="22" r="2.5" fill="#FFFFFF" />
+        <circle cx="0" cy="31" r="2.5" fill="#FFFFFF" />
+        <circle cx="-22" cy="22" r="2.5" fill="#FFFFFF" />
+        <circle cx="-31" cy="0" r="2.5" fill="#FFFFFF" />
+        <circle cx="-22" cy="-22" r="2.5" fill="#FFFFFF" />
+      </g>
+    </g>
+  </g>
+
+  <!-- TEXTO POURLY (Reposicionado con mayor seguridad lateral en el ancho y subido levemente) -->
+  <g fill="#FFFFFF" transform="translate(98, 595) scale(1.18)">
+    <!-- P -->
+    <path d="M 0 0 H 60 C 90 0, 108 15, 108 42 C 108 69, 90 84, 60 84 H 33 V 136 H 0 Z
+             M 33 29 V 55 H 58 C 68 55, 75 51, 75 42 C 75 34, 68 29, 58 29 Z" />
+
+    <!-- O -->
+    <path d="M 179 -3 C 219 -3, 246 25, 246 68 C 246 111, 219 140, 179 140 C 139 140, 112 111, 112 68 C 112 25, 139 -3, 179 -3 Z
+             M 179 29 C 160 29, 146 44, 146 68 C 146 92, 160 107, 179 107 C 198 107, 212 92, 212 68 C 212 44, 198 29, 179 29 Z" />
+
+    <!-- U -->
+    <path d="M 261 0 H 294 V 78 C 294 98, 305 108, 322 108 C 339 108, 350 98, 350 78 V 0 H 383 V 76 C 383 116, 359 140, 322 140 C 285 140, 261 116, 261 76 Z" />
+
+    <!-- R -->
+    <path d="M 399 0 H 460 C 489 0, 506 15, 506 40 C 506 58, 495 71, 479 77 L 511 136 H 472 L 445 82 H 432 V 136 H 399 Z
+             M 432 29 V 55 H 457 C 467 55, 474 49, 474 42 C 474 35, 467 29, 457 29 Z" />
+
+    <!-- L -->
+    <path d="M 523 0 H 556 V 104 H 612 V 136 H 523 Z" />
+
+    <!-- Y (Reconstrucción total con gran holgura y puntos exactos) -->
+    <path d="M 629 0 H 662 L 690 58 L 718 0 H 751 L 705 92 V 136 H 674 V 92 Z" />
+  </g>
+</svg>
