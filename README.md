@@ -22,7 +22,7 @@ Pourly is a drink recipe finder and bar assistant. The app lets you search and f
 - **Framework & Language:** React 19, TypeScript
 - **Build Tool:** Vite
 - **Styling:** Tailwind CSS
-- **Routing:** React Router DOM *(upcoming)*
+- **Routing:** React Router DOM
 - **State Management:** Zustand *(upcoming)*
 - **Validation:** Zod *(upcoming)*
 - **UI Components:** Headless UI *(upcoming)*
@@ -30,7 +30,7 @@ Pourly is a drink recipe finder and bar assistant. The app lets you search and f
 
 ### Roadmap
 - [x] Initial project setup with Vite, React 19, TypeScript, and Tailwind CSS
-- [ ] Layout, navigation header, and page routing
+- [x] Layout, navigation header, and page routing
 - [ ] Drink categories and recipes consumption from external API
 - [ ] Recipe search and filtering by category and ingredients
 - [ ] Recipe details modal with ingredients and preparation steps
@@ -68,7 +68,7 @@ Pourly es un buscador de recetas de bebidas y asistente de coctelería. La aplic
 - **Framework y Lenguaje:** React 19, TypeScript
 - **Herramienta de compilación:** Vite
 - **Estilos:** Tailwind CSS
-- **Enrutamiento:** React Router DOM *(próximamente)*
+- **Enrutamiento:** React Router DOM
 - **Gestión de Estado:** Zustand *(próximamente)*
 - **Validación:** Zod *(próximamente)*
 - **Componentes UI:** Headless UI *(próximamente)*
@@ -76,7 +76,7 @@ Pourly es un buscador de recetas de bebidas y asistente de coctelería. La aplic
 
 ### Hoja de Ruta
 - [x] Configuración inicial del proyecto con Vite, React 19, TypeScript y Tailwind CSS
-- [ ] Estructura general, cabecera de navegación y rutas
+- [x] Estructura general, cabecera de navegación y rutas
 - [ ] Consumo de API externa para categorías y recetas de bebidas
 - [ ] Búsqueda y filtrado de recetas por categoría e ingredientes
 - [ ] Modal con detalle de la receta, ingredientes e instrucciones
