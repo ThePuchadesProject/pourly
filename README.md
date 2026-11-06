@@ -23,8 +23,8 @@ Pourly is a drink recipe finder and bar assistant. The app lets you search and f
 - **Build Tool:** Vite
 - **Styling:** Tailwind CSS
 - **Routing:** React Router DOM
-- **State Management:** Zustand *(upcoming)*
-- **Validation:** Zod *(upcoming)*
+- **State Management:** Zustand
+- **Validation:** Zod
 - **UI Components:** Headless UI *(upcoming)*
 - **AI Integration:** AI SDK / API *(upcoming)*
 
@@ -69,8 +69,8 @@ Pourly es un buscador de recetas de bebidas y asistente de coctelería. La aplic
 - **Herramienta de compilación:** Vite
 - **Estilos:** Tailwind CSS
 - **Enrutamiento:** React Router DOM
-- **Gestión de Estado:** Zustand *(próximamente)*
-- **Validación:** Zod *(próximamente)*
+- **Gestión de Estado:** Zustand
+- **Validación:** Zod
 - **Componentes UI:** Headless UI *(próximamente)*
 - **Integración con IA:** AI SDK / API *(próximamente)*
 
