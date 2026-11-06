@@ -25,7 +25,7 @@ Pourly is a drink recipe finder and bar assistant. The app lets you search and f
 - **Routing:** React Router DOM
 - **State Management:** Zustand
 - **Validation:** Zod
-- **UI Components:** Headless UI *(upcoming)*
+- **UI Components:** Headless UI
 - **AI Integration:** AI SDK / API *(upcoming)*
 
 ### Roadmap
@@ -33,8 +33,8 @@ Pourly is a drink recipe finder and bar assistant. The app lets you search and f
 - [x] Layout, navigation header, and page routing
 - [x] Drink categories and recipes consumption from external API
 - [x] Recipe search and filtering by category and ingredients
-- [ ] Recipe details modal with ingredients and preparation steps
-- [ ] Global state management with modular slices
+- [x] Recipe details modal with ingredients and preparation steps
+- [x] Global state management with modular slices
 - [ ] Favorites collection with local storage persistence
 - [ ] User notifications system
 - [ ] Dedicated AI assistant page for drink ideas and recommendations
@@ -71,7 +71,7 @@ Pourly es un buscador de recetas de bebidas y asistente de coctelería. La aplic
 - **Enrutamiento:** React Router DOM
 - **Gestión de Estado:** Zustand
 - **Validación:** Zod
-- **Componentes UI:** Headless UI *(próximamente)*
+- **Componentes UI:** Headless UI
 - **Integración con IA:** AI SDK / API *(próximamente)*
 
 ### Hoja de Ruta
@@ -79,8 +79,8 @@ Pourly es un buscador de recetas de bebidas y asistente de coctelería. La aplic
 - [x] Estructura general, cabecera de navegación y rutas
 - [x] Consumo de API externa para categorías y recetas de bebidas
 - [x] Búsqueda y filtrado de recetas por categoría e ingredientes
-- [ ] Modal con detalle de la receta, ingredientes e instrucciones
-- [ ] Gestión de estado global con arquitectura modular de slices
+- [x] Modal con detalle de la receta, ingredientes e instrucciones
+- [x] Gestión de estado global con arquitectura modular de slices
 - [ ] Colección de favoritos con persistencia en almacenamiento local
 - [ ] Sistema de avisos y notificaciones en la interfaz
 - [ ] Vista dedicada de asistente con IA para ideas y recomendaciones
