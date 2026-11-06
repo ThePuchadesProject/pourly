@@ -5,7 +5,7 @@ import {
   type ChangeEvent,
   type SubmitEvent,
 } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { useAppStore } from "../stores/useAppStore";
 
 export default function Header() {
@@ -63,7 +63,9 @@ export default function Header() {
       <div className="mx-auto container px-5 py-16">
         <div className="flex justify-between items-center">
           <div>
-            <img className="w-32" src="/logo.svg" alt="Pourly Logo" />
+            <Link to="/">
+              <img className="w-32" src="/logo.svg" alt="Pourly Logo" />
+            </Link>
           </div>
 
           <nav className="flex gap-4">
@@ -71,7 +73,7 @@ export default function Header() {
               to="/"
               className={({ isActive }) =>
                 isActive
-                  ? "text-pink-700 uppercase font-bold"
+                  ? "text-pink-400 uppercase font-bold"
                   : "text-white uppercase font-bold"
               }
             >
@@ -81,11 +83,21 @@ export default function Header() {
               to="/favorites"
               className={({ isActive }) =>
                 isActive
-                  ? "text-pink-700 uppercase font-bold"
+                  ? "text-pink-400 uppercase font-bold"
                   : "text-white uppercase font-bold"
               }
             >
               Favorites
+            </NavLink>
+            <NavLink
+              to="/generate"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-pink-400 uppercase font-bold"
+                  : "text-white uppercase font-bold"
+              }
+            >
+              Generate with AI
             </NavLink>
           </nav>
         </div>

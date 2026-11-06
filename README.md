@@ -37,7 +37,7 @@ Pourly is a drink recipe finder and bar assistant. The app lets you search and f
 - [x] Global state management with modular slices
 - [x] Favorites collection with local storage persistence
 - [x] User notifications system
-- [ ] Dedicated AI assistant page for drink ideas and recommendations
+- [x] Dedicated AI assistant page for drink ideas and recommendations
 - [ ] AI prompt form and async response rendering
 
 ### Local Installation
@@ -83,7 +83,7 @@ Pourly es un buscador de recetas de bebidas y asistente de coctelería. La aplic
 - [x] Gestión de estado global con arquitectura modular de slices
 - [x] Colección de favoritos con persistencia en almacenamiento local
 - [x] Sistema de avisos y notificaciones en la interfaz
-- [ ] Vista dedicada de asistente con IA para ideas y recomendaciones
+- [x] Vista dedicada de asistente con IA para ideas y recomendaciones
 - [ ] Formulario de consultas a la IA y renderizado de respuestas asíncronas
 
 ### Instalación Local
