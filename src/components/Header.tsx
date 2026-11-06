@@ -19,6 +19,7 @@ export default function Header() {
   const fetchCategories = useAppStore((state) => state.fetchCategories);
   const categories = useAppStore((state) => state.categories);
   const searchRecipes = useAppStore((state) => state.searchRecipes);
+  const showNotification = useAppStore((state) => state.showNotification);
 
   useEffect(() => {
     fetchCategories();
@@ -36,13 +37,19 @@ export default function Header() {
   const handleSubmit = (e: SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // TODO: Validar
-    if (Object.values(searchFilters).includes("")) {
-      console.log("All fields are mandatory");
+    const trimmedFields = {
+      category: searchFilters.category,
+      ingredient: searchFilters.ingredient.trim(),
+    };
+
+    // Validar
+    if (Object.values(trimmedFields).includes("")) {
+      showNotification({ error: true, text: "All fields are mandatory" });
       return;
     }
+
     // Consultar las recetas
-    searchRecipes(searchFilters);
+    searchRecipes(trimmedFields);
   };
 
   return (
