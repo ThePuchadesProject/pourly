@@ -1,6 +1,6 @@
 # Pourly
 
-> A web application to discover, search, and save cocktail and drink recipes, featuring an AI assistant for custom recommendations.
+> A learning project built with React 19 and TypeScript to search cocktail recipes and experiment with AI recommendations.
 
 **Live Demo:** [pourly.thepuchadesproject.com](https://pourly.thepuchadesproject.com)
 
@@ -8,7 +8,17 @@
 
 ## Navigation / Navegación
 - [English](#english)
+  - [What the project does](#what-the-project-does)
+  - [Learning Goals & Main Tech](#learning-goals--main-tech)
+  - [Note on API Keys & Security](#note-on-api-keys--security)
+  - [Roadmap](#roadmap)
+  - [Local Installation](#local-installation)
 - [Español](#español)
+  - [Qué hace el proyecto](#qué-hace-el-proyecto)
+  - [Objetivos de aprendizaje y tecnologías](#objetivos-de-aprendizaje-y-tecnologías)
+  - [Nota sobre la API Key y seguridad](#nota-sobre-la-api-key-y-seguridad)
+  - [Hoja de Ruta](#hoja-de-ruta)
+  - [Instalación Local](#instalación-local)
 
 ---
 
@@ -16,17 +26,22 @@
 ## English
 
 ### What the project does
-Pourly is a drink recipe finder and bar assistant. The app lets you search and filter cocktail recipes by category or ingredients, view detailed instructions, save favorite drinks to your personal list, and ask an AI assistant for custom recommendations based on your preferences.
+Pourly is a pet learning project created to practice modern React patterns. It allows you to search cocktail recipes by name, ingredient, or category using an external public API, save your favorites to local storage, and ask a bartender AI assistant for custom drink ideas with real-time text streaming.
 
-### Tech Stack
-- **Framework & Language:** React 19, TypeScript
-- **Build Tool:** Vite
-- **Styling:** Tailwind CSS
-- **Routing:** React Router DOM
-- **State Management:** Zustand
-- **Validation:** Zod
-- **UI Components:** Headless UI
-- **AI Integration:** AI SDK / API *(upcoming)*
+### Learning Goals & Main Tech
+This project was built to test and consolidate key frontend libraries and architecture patterns:
+- **React 19 & TypeScript:** Strict typing, components, and hooks.
+- **Tailwind CSS v4:** Modern styling with responsive design.
+- **React Router DOM:** Layout routing, active navigation, and lazy loading with `Suspense`.
+- **Zustand (Slices Pattern):** Modular global state divided into separate slices (`recipes`, `favorites`, `notifications`, `ai`) with DevTools integration.
+- **Zod:** Runtime schema validation for external API responses.
+- **Headless UI & Heroicons:** Accessible modal dialogs and notification toasts.
+- **AI SDK & OpenRouter:** Streaming assistant responses with `streamText`.
+
+### Note on API Keys & Security
+Frontend applications should avoid exposing secret API keys in the client bundle.
+- **In local development:** Vite's development server acts as a proxy for `/api/openrouter`, reading `OPENROUTER_API_KEY` from `.env.local` and attaching the authorization header without exposing the secret to the browser.
+- **In production:** The application is designed to sit behind a web server proxy that injects the secret API key into upstream AI calls, keeping the public build completely clean.
 
 ### Roadmap
 - [x] Initial project setup with Vite, React 19, TypeScript, and Tailwind CSS
@@ -38,7 +53,7 @@ Pourly is a drink recipe finder and bar assistant. The app lets you search and f
 - [x] Favorites collection with local storage persistence
 - [x] User notifications system
 - [x] Dedicated AI assistant page for drink ideas and recommendations
-- [ ] AI prompt form and async response rendering
+- [x] AI prompt form and async streaming response handling
 
 ### Local Installation
 1. Clone the repository:
@@ -50,11 +65,19 @@ Pourly is a drink recipe finder and bar assistant. The app lets you search and f
    ```bash
    npm install
    ```
-3. Run the development server:
+3. Set up your environment variables:
+   ```bash
+   cp .env.example .env.local
+   ```
+   Edit `.env.local` and add your OpenRouter key:
+   ```env
+   OPENROUTER_API_KEY=your_openrouter_api_key_here
+   ```
+4. Start the dev server:
    ```bash
    npm run dev
    ```
-4. Open your browser at `http://localhost:5173`
+5. Open `http://localhost:5173` in your browser.
 
 ---
 
@@ -62,17 +85,22 @@ Pourly is a drink recipe finder and bar assistant. The app lets you search and f
 ## Español
 
 ### Qué hace el proyecto
-Pourly es un buscador de recetas de bebidas y asistente de coctelería. La aplicación permite buscar y filtrar recetas de cócteles por categoría o ingredientes, consultar instrucciones detalladas de preparación, guardar bebidas favoritas en una lista personal y pedir recomendaciones personalizadas a un asistente con Inteligencia Artificial.
+Pourly es un proyecto de práctica y aprendizaje enfocado en trabajar con React moderno. Permite buscar y filtrar recetas de cócteles por categoría o ingrediente consumiendo una API pública externa, guardar recetas favoritas en el almacenamiento local del navegador y pedir sugerencias personalizadas a un asistente de coctelería con Inteligencia Artificial que responde con streaming de texto.
 
-### Stack Tecnológico
-- **Framework y Lenguaje:** React 19, TypeScript
-- **Herramienta de compilación:** Vite
-- **Estilos:** Tailwind CSS
-- **Enrutamiento:** React Router DOM
-- **Gestión de Estado:** Zustand
-- **Validación:** Zod
-- **Componentes UI:** Headless UI
-- **Integración con IA:** AI SDK / API *(próximamente)*
+### Objetivos de aprendizaje y tecnologías
+El objetivo principal de esta app ha sido poner a prueba e integrar varias librerías y patrones clave:
+- **React 19 y TypeScript:** Tipado estricto, componentes funcionales y custom hooks.
+- **Tailwind CSS v4:** Maquetación moderna y responsive.
+- **React Router DOM:** Enrutamiento modular con layouts, enlaces activos y carga perezosa con `Suspense`.
+- **Zustand (Patrón Slices):** Estado global dividido en stores modulares (`recipes`, `favorites`, `notifications`, `ai`) con soporte para DevTools.
+- **Zod:** Validación de esquemas en tiempo de ejecución para asegurar las respuestas de la API.
+- **Headless UI y Heroicons:** Modales accesibles y sistema de notificaciones visuales.
+- **AI SDK y OpenRouter:** Conexión y streaming en tiempo real con modelos de IA usando `streamText`.
+
+### Nota sobre la API Key y seguridad
+En proyectos cliente de frontend no es buena práctica exponer claves privadas en el código público.
+- **En desarrollo local:** El servidor de Vite incluye un proxy configurado para `/api/openrouter` que lee `OPENROUTER_API_KEY` desde `.env.local` e inyecta la cabecera necesaria, de modo que la clave nunca se envía desde el navegador.
+- **En producción:** La aplicación está pensada para desplegarse detrás de un proxy en el servidor web que inyecta la clave de forma segura antes de enviar la petición a la IA, manteniendo el build compilado 100% libre de credenciales.
 
 ### Hoja de Ruta
 - [x] Configuración inicial del proyecto con Vite, React 19, TypeScript y Tailwind CSS
@@ -84,7 +112,7 @@ Pourly es un buscador de recetas de bebidas y asistente de coctelería. La aplic
 - [x] Colección de favoritos con persistencia en almacenamiento local
 - [x] Sistema de avisos y notificaciones en la interfaz
 - [x] Vista dedicada de asistente con IA para ideas y recomendaciones
-- [ ] Formulario de consultas a la IA y renderizado de respuestas asíncronas
+- [x] Formulario de consultas a la IA y renderizado de respuestas asíncronas
 
 ### Instalación Local
 1. Clonar el repositorio:
@@ -96,8 +124,16 @@ Pourly es un buscador de recetas de bebidas y asistente de coctelería. La aplic
    ```bash
    npm install
    ```
-3. Iniciar el servidor de desarrollo:
+3. Configurar variables de entorno:
+   ```bash
+   cp .env.example .env.local
+   ```
+   Editar `.env.local` y colocar tu clave de OpenRouter:
+   ```env
+   OPENROUTER_API_KEY=your_openrouter_api_key_here
+   ```
+4. Iniciar el servidor de desarrollo:
    ```bash
    npm run dev
    ```
-4. Abrir en el navegador en `http://localhost:5173`
+5. Abrir en el navegador en `http://localhost:5173`.

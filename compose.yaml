@@ -1,0 +1,17 @@
+services:
+  web:
+    image: nginx:alpine-slim
+    container_name: ${PROJECT_NAME:-pourly}
+    restart: unless-stopped
+    environment:
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
+      - NGINX_ENVSUBST_FILTER=OPENROUTER_API_KEY
+    volumes:
+      - ./dist:/usr/share/nginx/html:ro
+      - ./nginx.conf.template:/etc/nginx/templates/default.conf.template:ro
+    networks:
+      - proxy_network
+
+networks:
+  proxy_network:
+    external: true
